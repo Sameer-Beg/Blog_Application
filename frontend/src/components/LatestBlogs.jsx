@@ -1,8 +1,9 @@
-import React from 'react'
-import {blogData} from "../assets/assets"
+import React, { useContext } from 'react'
 import BlogCart from './BlogCart'
+import { StoreContext } from '../context/StoreContext';
 
 const LatestBlogs = () => {
+    const {blogData} = useContext(StoreContext)
   return (
    <div>
       <h1 className="text-3xl my-3 text-gray-700 font-bold text-center sm:text-start">

@@ -20,9 +20,10 @@ const Navbar = () => {
                 <Link to={"/"} className="cursor-pointer hover:text-orange-500 duration-300">Home</Link>
                 <Link to={"/blogs"} className="cursor-pointer hover:text-orange-500 duration-300">Blogs</Link>
                 <Link to={"/about"} className="cursor-pointer hover:text-orange-500 duration-300">About</Link>
+                <Link to={"/contact"} className="cursor-pointer hover:text-orange-500 duration-300">Contact</Link>
             </ul>
 
-            <Link className='bg-orange-500 text-white px-8 py-2 rounded-full cursor-pointer hover:bg-orange-600 duration-300'>
+            <Link to={"/login"} className='bg-orange-500 text-white px-8 py-2 rounded-full cursor-pointer hover:bg-orange-600 duration-300'>
             Signin
             </Link>
             </div>

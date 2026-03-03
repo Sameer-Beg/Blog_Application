@@ -3,14 +3,18 @@ import cors from "cors"
 import dotenv from "dotenv"
 import { connectDB } from "./config/connectionDB.js";
 dotenv.config();
+import userRoutes from './routes/user.routes.js';
+
 
 
 const app = express();
 
-
 // middlewares
 app.use(express.json());
 app.use(cors());
+
+app.use("/images" , express.static("uploads"))
+app.use("/users" , userRoutes);
 
 
 app.get("/", (req , res )=>{

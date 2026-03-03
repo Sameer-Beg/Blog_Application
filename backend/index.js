@@ -4,7 +4,7 @@ import dotenv from "dotenv"
 import { connectDB } from "./config/connectionDB.js";
 dotenv.config();
 import userRoutes from './routes/user.routes.js';
-
+import blogRoutes from './routes/blog.routes.js';
 
 
 const app = express();
@@ -15,6 +15,7 @@ app.use(cors());
 
 app.use("/images" , express.static("uploads"))
 app.use("/users" , userRoutes);
+app.use("/blogs" , blogRoutes);
 
 
 app.get("/", (req , res )=>{

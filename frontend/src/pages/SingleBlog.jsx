@@ -9,7 +9,11 @@ const SingleBlog = () => {
   const blog = blogData.find((b) => b._id === id);
 
   if (!blog) {
-    return <p className="text-center mt-20 text-lg font-semibold">Loading...</p>;
+    return (
+      <p className="text-center mt-20 text-lg font-semibold">
+        Loading...
+      </p>
+    );
   }
 
   return (
@@ -18,7 +22,7 @@ const SingleBlog = () => {
       {/* Blog Image */}
       <div className="overflow-hidden rounded-2xl shadow-md">
         <img
-          src={`https://blog-backend-448e.onrender.com/images/${blog.image}`}
+          src={blog.image}
           alt={blog.title}
           className="w-full h-64 sm:h-80 md:h-96 object-cover hover:scale-105 transition-transform duration-500"
         />
@@ -37,7 +41,7 @@ const SingleBlog = () => {
       {/* Author Section */}
       <div className="flex items-center gap-4 mt-6 border-b pb-6">
         <img
-          src={`https://blog-backend-448e.onrender.com/images/${blog.author.image}`}
+          src={blog.author.image}
           alt={blog.author.name}
           className="w-12 h-12 rounded-full object-cover border"
         />
@@ -45,11 +49,13 @@ const SingleBlog = () => {
           <p className="font-semibold text-gray-800">
             {blog.author.name}
           </p>
-          <p>{new Date(blog.createdAt).toLocaleDateString("en-us",{
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-          })}</p>
+          <p>
+            {new Date(blog.createdAt).toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </p>
         </div>
       </div>
 

@@ -17,7 +17,7 @@ const BlogCart = ({
       <Link to={`/blogs/${id}`}>
         <div className="overflow-hidden">
           <img
-            src={`http://localhost:8000/images/${image}`}
+            src={`https://blog-backend-448e.onrender.com/images/${image}`}
             alt={title}
             className="w-full h-48 sm:h-56 md:h-60 object-cover hover:scale-110 transition-transform duration-500"
           />
@@ -40,7 +40,7 @@ const BlogCart = ({
         {/* Author Section */}
         <div className="flex items-center gap-3 text-sm text-gray-600">
           <img
-            src={`http://localhost:8000/images/${author_image}`}
+            src={`https://blog-backend-448e.onrender.com/images/${author_image}`}
             alt={author_name}
             className="w-8 h-8 rounded-full object-cover"
           />

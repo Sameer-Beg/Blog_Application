@@ -36,7 +36,7 @@ const Signup = () => {
       data.append("image" , formData.image)
       setLoading(true)
 
-      const res = await axios.post("http://localhost:8000/users/register" , data ,{
+      const res = await axios.post("https://blog-backend-448e.onrender.com/users/register" , data ,{
         headers : {
           "Content-Type" : "multipart/form-data"
         }

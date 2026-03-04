@@ -34,7 +34,7 @@ const Dashboard = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/blogs/create",
+        "https://blog-backend-448e.onrender.com/blogs/create",
         data,
         {
           headers: {
@@ -61,7 +61,7 @@ const Dashboard = () => {
     const allBlogs = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8000/blogs/all",
+          "https://blog-backend-448e.onrender.com/blogs/all",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -81,7 +81,7 @@ const Dashboard = () => {
   const removeBlog = async (blogId) => {
     try {
       const res = await axios.delete(
-        `http://localhost:8000/blogs/delete/${blogId}`,
+        `https://blog-backend-448e.onrender.com/blogs/delete/${blogId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -215,7 +215,7 @@ const Dashboard = () => {
 
                       <td className="border px-4 py-3">
                         <img
-                          src={`http://localhost:8000/images/${blog.image}`}
+                          src={`https://blog-backend-448e.onrender.com/images/${blog.image}`}
                           alt={blog.title}
                           className="w-16 h-16 object-cover mx-auto rounded-md"
                         />

@@ -18,7 +18,7 @@ const SingleBlog = () => {
       {/* Blog Image */}
       <div className="overflow-hidden rounded-2xl shadow-md">
         <img
-          src={`http://localhost:8000/images/${blog.image}`}
+          src={`https://blog-backend-448e.onrender.com/images/${blog.image}`}
           alt={blog.title}
           className="w-full h-64 sm:h-80 md:h-96 object-cover hover:scale-105 transition-transform duration-500"
         />
@@ -37,7 +37,7 @@ const SingleBlog = () => {
       {/* Author Section */}
       <div className="flex items-center gap-4 mt-6 border-b pb-6">
         <img
-          src={`http://localhost:8000/images/${blog.author.image}`}
+          src={`https://blog-backend-448e.onrender.com/images/${blog.author.image}`}
           alt={blog.author.name}
           className="w-12 h-12 rounded-full object-cover border"
         />

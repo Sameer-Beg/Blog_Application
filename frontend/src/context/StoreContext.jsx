@@ -22,7 +22,7 @@ const  StoreContextProvider = ({children})=>{
     useEffect(()=>{
         const allblogs = async()=>{
             try{
-                const res = await axios.get("http://localhost:8000/blogs/all")
+                const res = await axios.get("https://blog-backend-448e.onrender.com/blogs/all")
                 if(res.data.success){
                     setblogData(res.data.blogs)
                 }

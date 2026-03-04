@@ -1,21 +1,61 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-const BlogCart = ({id, title, image, category, author_name, author_image, date}) => {
+import React from "react";
+import { Link } from "react-router-dom";
+
+const BlogCart = ({
+  id,
+  title,
+  image,
+  category,
+  author_name,
+  author_image,
+  date,
+}) => {
   return (
-    <div className='border-1 border-gray-300 shadow-md p-3 rounded-md'>
-        <Link to={`/blogs/${id}`}>
-        <img src={image} alt={title} className="w-full items-center justify-center mx-auto cursor-pointer transform duration-300 hover:scale-105" />
-    
-        </Link>
-        <p className='text-[#4B6BFB] font-semibold my-3'>{category}</p>
-      <h1 className="text-xl font-bold">{title}</h1>
-      <div className='flex gap-3 items-center my-3'>
-        <img src={author_image} alt="" className="w-8 h-8 rounded-full" />
-        <p className='text-lg font-bold text-gray-600'>{author_name}</p>
-        <p className='text-lg font-bold text-gray-600'>{date}</p>
+    <div className="bg-white border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl overflow-hidden">
+
+      {/* Image */}
+      <Link to={`/blogs/${id}`}>
+        <div className="overflow-hidden">
+          <img
+            src={`http://localhost:8000/images/${image}`}
+            alt={title}
+            className="w-full h-48 sm:h-56 md:h-60 object-cover hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+      </Link>
+
+      {/* Content */}
+      <div className="p-4">
+
+        {/* Category */}
+        <p className="text-blue-600 text-sm font-semibold mb-2">
+          {category}
+        </p>
+
+        {/* Title */}
+        <h1 className="text-lg sm:text-xl font-bold mb-3 line-clamp-2">
+          {title}
+        </h1>
+
+        {/* Author Section */}
+        <div className="flex items-center gap-3 text-sm text-gray-600">
+          <img
+            src={`http://localhost:8000/images/${author_image}`}
+            alt={author_name}
+            className="w-8 h-8 rounded-full object-cover"
+          />
+          <p className="font-medium">{author_name}</p>
+          <span className="text-gray-400">•</span>
+          <p>{new Date(date).toLocaleDateString("en-us",{
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          })}</p>
+        </div>
+
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BlogCart
+export default BlogCart;

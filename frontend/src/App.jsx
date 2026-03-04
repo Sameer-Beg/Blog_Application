@@ -9,6 +9,9 @@ import Signup from './pages/Signup'
 import SingleBlog from './pages/SingleBlog'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+ import { ToastContainer, toast } from 'react-toastify';
+import Dashboard from './pages/Dashboard'
+
 const App = () => {
   return (
     <div className='max-w-7xl mx-auto'>
@@ -20,9 +23,11 @@ const App = () => {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Signup/>}/>
-        <Route path='/blog/:id' element={<SingleBlog/>}/>
+        <Route path='/blogs/:id' element={<SingleBlog/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
       <Footer/>
+      <ToastContainer/>
     </div>
   )
 }
